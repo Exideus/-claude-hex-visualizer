@@ -101,7 +101,6 @@ export function HexTile({ session, position, isSelected, onClick }: HexTileProps
         color="#ffffff"
         anchorX="center"
         anchorY="middle"
-        font="/fonts/JetBrainsMono-Bold.ttf"
       >
         {session.name.length > 12 ? session.name.slice(0, 12) + '...' : session.name}
       </Text>
