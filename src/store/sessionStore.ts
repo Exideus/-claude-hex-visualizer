@@ -23,8 +23,6 @@ interface SessionStore {
 
 // Helper to assign hex grid positions
 function assignHexPositions(sessions: ClaudeSession[]): ClaudeSession[] {
-  const hexPositions: { q: number; r: number }[] = [];
-
   // Generate spiral hex positions
   const generateSpiral = (count: number) => {
     const positions: { q: number; r: number }[] = [{ q: 0, r: 0 }];

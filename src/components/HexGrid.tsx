@@ -5,7 +5,6 @@ import type { ClaudeSession } from '../types/session';
 
 // Hex grid spacing constants
 const HEX_SIZE = 1.0;
-const HEX_HEIGHT = 0.866; // sqrt(3)/2
 
 interface HexGridProps {
   sessions: ClaudeSession[];
@@ -46,7 +45,7 @@ export function HexGrid({ sessions }: HexGridProps) {
     <group>
       {/* Background grid hexes */}
       {backgroundHexes.map(({ q, r }) => {
-        const [x, y, z] = axialToWorld(q, r);
+        const [x, , z] = axialToWorld(q, r);
         return (
           <mesh
             key={`bg-${q}-${r}`}
@@ -67,7 +66,7 @@ export function HexGrid({ sessions }: HexGridProps) {
 
       {/* Grid lines */}
       {backgroundHexes.map(({ q, r }) => {
-        const [x, y, z] = axialToWorld(q, r);
+        const [x, , z] = axialToWorld(q, r);
         return (
           <mesh
             key={`line-${q}-${r}`}
